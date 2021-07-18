@@ -1,3 +1,4 @@
+using Aplicativo_Web_ASP.NET_Core.Services.Implementations;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -20,6 +21,8 @@ namespace Aplicativo_Web_ASP.NET_Core
         {
 
             services.AddControllers();
+
+            services.AddScoped<IClienteService, ClienteServiceImplementation>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
