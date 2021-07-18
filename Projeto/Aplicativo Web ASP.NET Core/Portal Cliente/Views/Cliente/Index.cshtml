@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Aplicativo_Web_ASP.NET_Core.Model.ClienteViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Clientes</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                Nome
+            </th>
+            <th>
+                Data do Cadastro
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Data_Cadastro)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
