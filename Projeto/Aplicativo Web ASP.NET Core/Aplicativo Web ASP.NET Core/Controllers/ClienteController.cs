@@ -25,11 +25,11 @@ namespace Aplicativo_Web_ASP.NET_Core.Controllers
         } 
         
         [HttpGet("{id}")]
-        public IActionResult Get(long id)
+        public IActionResult Get(int id)
         {
             var cliente = _clienteService.FindByID(id);
             if (cliente == null) return NotFound();
-            return Ok();
+            return Ok(cliente);
         }
     }
 }

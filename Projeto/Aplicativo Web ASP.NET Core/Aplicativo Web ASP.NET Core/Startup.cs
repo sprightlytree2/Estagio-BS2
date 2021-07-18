@@ -1,6 +1,8 @@
+using Aplicativo_Web_ASP.NET_Core.Model.Context;
 using Aplicativo_Web_ASP.NET_Core.Services.Implementations;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -21,6 +23,11 @@ namespace Aplicativo_Web_ASP.NET_Core
         {
 
             services.AddControllers();
+
+            services.AddDbContext<SQLContext>(options =>
+            {
+                options.UseSqlServer(Configuration.GetConnectionString("SQLConnectionString"));
+            });
 
             services.AddScoped<IClienteService, ClienteServiceImplementation>();
         }

@@ -5,7 +5,7 @@ namespace Aplicativo_Web_ASP.NET_Core.Services.Implementations
 {
     public interface IClienteService
     {
-        Cliente FindByID(long id);
+        Cliente FindByID(int id);
         List<Cliente> FindAll();
 
     }
